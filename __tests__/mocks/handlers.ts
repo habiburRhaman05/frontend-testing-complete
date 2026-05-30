@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+import { expect } from 'vitest';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
@@ -148,4 +149,32 @@ export const handlers = [
   http.delete(`${API_BASE}/blogs/:id`, async () => {
     return HttpResponse.json({ success: true });
   }),
+
+
+  // componenes testing
+
+http.get(
+  "https://api.coingecko.com/api/v3/coins/markets",
+  ({ request }) => {
+    const url = new URL(request.url);
+
+    const currency = url.searchParams.get("vs_currency");
+
+    if (currency !== "usd") {
+      return HttpResponse.json(
+        { error: "invalid currency" },
+        { status: 400 }
+      );
+    }
+
+    return HttpResponse.json([
+      {
+      "id":"bitcoin","name":"Bitcoin","price":73592,
+    }
+    ]);
+  }
+),
+
 ];
+
+

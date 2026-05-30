@@ -1,4 +1,5 @@
 "use client";
+import { AssetDashboard } from "@/components/AssetDashboard";
 import { ProductBadge } from "@/components/ProductBadge";
 import { TaskManager } from "@/components/TaskManager";
 import { useState } from "react";
@@ -14,7 +15,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-black px-6 text-neutral-400">
       {/* <ProductBadge stock={10} tags={["shirt", "men-shirt"]} discount={20} /> */}
-     total task:{totalTask}
+     {/* total task:{totalTask}
       <TaskManager
         initialTasks={[
           {
@@ -24,7 +25,8 @@ export default function Home() {
           }
         ]}
         onTaskCountChange={updatedTasksCount}
-      />
+      /> */}
+      <AssetDashboard/>
     </main>
   )
 }
