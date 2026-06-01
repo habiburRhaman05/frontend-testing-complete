@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './authSlice';
 import todoSlice from './todoSlice';
+import searchSlice from './searchSlice';
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    todo:todoSlice
+    todo:todoSlice,
+    search:searchSlice
   },
 });
 

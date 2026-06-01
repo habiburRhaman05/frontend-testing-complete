@@ -1,6 +1,7 @@
 "use client";
 import { AssetDashboard } from "@/components/AssetDashboard";
 import { ProductBadge } from "@/components/ProductBadge";
+import { ProductSearch } from "@/components/ProductSearch";
 import { TaskManager } from "@/components/TaskManager";
 import { useState } from "react";
 
@@ -26,7 +27,8 @@ export default function Home() {
         ]}
         onTaskCountChange={updatedTasksCount}
       /> */}
-      <AssetDashboard/>
+      {/* <AssetDashboard/> */}
+      <ProductSearch/>
     </main>
   )
 }
